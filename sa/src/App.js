@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
+//import { Link } from 'react-router-dom';
 
 
 function App() {
@@ -20,9 +21,15 @@ function App() {
           </div>
         </div>
         <div>
+          <a href="https://www.linkedin.com/in/saida-arevalo-123a071b3/">
           <FaLinkedin />
+          </a>
+          <a href="https://github.com/saida179">
           <FaGithub />
+            </a>
+            <a href={"mailto:zaida9000@gmail.com"}>
           <SiGmail />
+          </a>
         </div>
       </header>
       <Footer />
