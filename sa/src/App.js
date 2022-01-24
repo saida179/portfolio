@@ -1,6 +1,11 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootswatch/dist/slate/bootstrap.min.css';
 import './App.css';
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar/index";
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
@@ -11,30 +16,32 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome!</h1>
-        <div class="card border-light mb-3">
-          <div class="card-body">
-            <h4 class="card-title">I'm Saida Arevalo,</h4>
-            <p class="card-text">here you can find information about my journey as a full stack developer.</p>
-          </div>
-        </div>
-        <div>
-          <a href="https://www.linkedin.com/in/saida-arevalo-123a071b3/">
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={About} />
+          <Route path="/about" component={About} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/contact" component={Contact} />
+          <Route component={About} />
+        </Switch>
+        <Footer />
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/saida-arevalo-123a071b3/">
           <FaLinkedin />
-          </a>
-          <a href="https://github.com/saida179">
+        </a>
+        <a href="https://github.com/saida179">
           <FaGithub />
-            </a>
-            <a href={"mailto:zaida9000@gmail.com"}>
+        </a>
+        <a href={"mailto:zaida9000@gmail.com"}>
           <SiGmail />
-          </a>
-        </div>
-      </header>
-      <Footer />
-    </div>
+        </a>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
